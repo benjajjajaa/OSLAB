@@ -36,7 +36,7 @@ int main(void)
     }
 
     
-    .
+    
 
     printf("\nAverage Waiting Time = %.2f", wtavg / n); //formula for AWT
     printf("\nAverage Turnaround Time = %.2f\n", tatavg / n); //formula for ATT
