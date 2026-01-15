@@ -19,20 +19,24 @@ int main(void)
         scanf("%d", &bt[i]); //stores in burst time array
     }
 
+    //first process
     wt[0] = 0; //first process never waits
     tat[0] = bt[0]; //turn around time is equal to burst time
 
+    //remaining
     for (i = 1; i < n; i++) {
-        wt[i] = wt[i - 1] + bt[i - 1];
+        wt[i] = wt[i - 1] + bt[i - 1]; //The waiting time of the current process equals, the waiting time of the previous process, plus the burst time of the previous process
         tat[i] = tat[i - 1] + bt[i];
-        wtavg += wt[i];
+    }
+
+    //computation for the average of AWT and ATT
+    for (i= 0 ; i < n; i++) {
+          wtavg += wt[i];
         tatavg += tat[i];
     }
 
-    printf("\nPROCESS\tBURST TIME\tWAITING TIME\tTURNAROUND TIME\n");
-    for (i = 0; i < n; i++) {
-        printf("P%d\t%d\t\t%d\t\t%d\n", i, bt[i], wt[i], tat[i]);
-    } //stores the output
+    
+    .
 
     printf("\nAverage Waiting Time = %.2f", wtavg / n); //formula for AWT
     printf("\nAverage Turnaround Time = %.2f\n", tatavg / n); //formula for ATT
