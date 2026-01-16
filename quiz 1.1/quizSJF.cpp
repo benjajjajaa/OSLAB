@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    int p[5], i, j;
+    int p[5], i, j; // Array for process numbers (p[0] = P0, p[1] = P1, etc.)
     float bt[5] = {50.54, 10.11, 33.34, 2.50, 101.10}; //variable is set
     float wt[5], tat[5];
     float wtavg = 0, tatavg = 0, temp;
 
-    int n = 5;
+    int n = 5; // Number of processes
 
     // Initialize process numbers
     for (i = 0; i < n; i++)
@@ -20,8 +20,9 @@ int main()
     {
         for (j = i + 1; j < n; j++)
         {
-            if (bt[i] > bt[j])
+            if (bt[i] > bt[j]) // If current burst time is larger than the next
             {
+                // Swap burst times
                 temp = bt[i];
                 bt[i] = bt[j];
                 bt[j] = temp;
@@ -34,13 +35,13 @@ int main()
     }
 
     // Waiting time and turnaround time calculation
-    wt[0] = 0;
+    wt[0] = 0; // First process starts immediately, so waiting time = 0
     tat[0] = bt[0];
 
     for (i = 1; i < n; i++)
     {
-        wt[i] = wt[i - 1] + bt[i - 1];
-        tat[i] = wt[i] + bt[i];
+        wt[i] = wt[i - 1] + bt[i - 1]; // Waiting time = previous process's waiting + burst
+        tat[i] = wt[i] + bt[i]; // Turnaround time = waiting time + its own burst time
         wtavg += wt[i];
         tatavg += tat[i];
     }
@@ -50,7 +51,7 @@ int main()
     cout << fixed << setprecision(2);
 
     for (i = 0; i < n; i++)
-        cout << "P" << p[i] << "\t"
+        cout << "P" << p[i] << "\t" // Process name
              << bt[i] << "\t\t"
              << wt[i] << "\t\t"
              << tat[i] << endl;
