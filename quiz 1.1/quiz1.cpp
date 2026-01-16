@@ -1,2 +1,0 @@
-//BEN JUSTIN Z. ESPIRITU and MARIANE EUSTAQUIO
-//quiz1 prelims
