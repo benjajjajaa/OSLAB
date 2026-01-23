@@ -1,0 +1,48 @@
+https://github.com/majeustaquio/OSLab
+
+dotnet new console -o ConsoleApp
+dotnet new console 
+dotnet run
+
+/FOR C++
+//PREPARATORY COMMANDS
+mkdir -p FOLDER
+g++ -std=c++17 -O2 - Wall -Wextra FOLDER/FILENAME.LANGUAGE -o FILENAME
+
+//EXECUTION COMMANDS
+./FILENAME
+
+//FOR C#
+//PREPARATORY COMMANDS
+dotnet new console -n HelloApp
+cd HelloApp
+
+//EXECUTION COMMANDS
+dotnet run
+
+//FOR C
+//PREPARATORY COMMANDS
+gcc FILENAME.c -o FILENAME
+
+//EXECUTION COMMANDS
+FILENAME OR ./FILENAME
+
+ 9:30am end time
+
+1.  Using Cpp code Prelim.cpp using cpp language do a code that you can you as execute algorithm
+1. Using C++ make a code that can run Round Robin, Shortest Job First, Shortest Remainting Time First Algorithm.
+the variable should be in structure named process. it should calculate quantum time in round robin, and should calculate median of burst time to calculate quantum time.
+in main code the arrival and burst time is already declared. the order of the result is: time quantum for the round robin, Round Robin, SJF, SRTF, int main.
+
+the given are:
+at = 4, 2, 3, 6, 1, 5, 8, 7
+bt = 53, 43, 18, 16, 44, 73, 99, 27
+
+
+the diplay of table result should look like this:
+PID  AT  BT  Completion  TT  WT
+
+add average TT and average WT for each table
+
+
+fix the result table, fix the alignment and add some "-------" design so the results dont scramble. and add the calculate of time quantum, how you got it.
