@@ -22,7 +22,7 @@ void RR()
         if (rt[q.front()] > 0 && qt[q.front()] < QUANTA)
         {
             qt[q.front()]++;
-            rt[q.front()]--;
+            rt[q.front()]--; //Show each time unit a process executes in RR.
 
             if (rt[q.front()] == 0)
             {
@@ -79,7 +79,7 @@ int main()
             if (at[i] <= tms && pt[i] < min && rt[i] > 0 && !flag[i])
             {
                 min = pt[i];
-                smallest = i;
+                smallest = i; //Show when the scheduler picks a process from the priority queue.
             }
         }
 
@@ -91,7 +91,7 @@ int main()
                 flag[last_smallest] = 1;
             }
             last_smallest = -1;
-            RR();
+            RR(); //Show when the scheduler picks a process from the RR queue.
             continue;
         }
         else if (smallest != -1 && !q.empty() && last_smallest == -1)
@@ -116,7 +116,7 @@ int main()
         }
 
         if (smallest != -1)
-            rt[smallest]--;
+            rt[smallest]--; //Show each time unit a process executes.
 
         if (smallest != -1 &&
             (rt[smallest] == 0 || (bt[smallest] - rt[smallest]) == QUANTA))
@@ -128,7 +128,7 @@ int main()
             }
             else
             {
-                ft[smallest] = tms + 1;
+                ft[smallest] = tms + 1; //Show when a process finishes execution.
                 flag[smallest] = 1;
             }
         }

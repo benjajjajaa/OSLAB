@@ -1,5 +1,3 @@
-//https://github.com/imsiddhartha/Multilevel-FeedBack-Queue-in-C-
-
 #include<stdio.h>
 #include<iostream>
 #include<queue>
