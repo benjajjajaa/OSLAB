@@ -1,0 +1,23 @@
+// line 14 AA EE; process type/category 
+it stores the AA value that classifies the process as SYSTEM, INTERACTIVE, or BATCH.
+
+Stored in every CC process as the type.
+Used by TT::YY to choose which of the three sets of queues the process belongs to.
+Printed in the simulation output as a human‑readable string.
+
+- The two‑letter identifiers (e.g. CC, DD, EE) are just placeholders; you could rename 
+them to Process, pid, type, etc. for clarity.
+- The code combines three subsystems: MLQ/MLFQ scheduling and a very simple resource manager.
+- EE is central to the scheduling logic: it anchors a process in the correct priority class.
+
+//BB
+BB it’s the state field for every process.
+In the CC struct the field BB JJ; holds the current state of the process.
+
+BB is a simple state machine for each CC process.
+It drives the simulation’s behaviour by indicating:
+
+who should be on a queue (READY),
+who is actively using the CPU (RUNNING),
+who has been suspended waiting for resources (BLOCKED),
+and who is done (TERMINATED).
